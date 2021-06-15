@@ -18,10 +18,12 @@ class Toggle extends Component {
   }
 }
 
+// make state avilable
 const mapStateToProps = (state) => ({
   messageVisibility: state.messageReducer.messageVisibility,
 });
 
+// make actions dispatching available
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
