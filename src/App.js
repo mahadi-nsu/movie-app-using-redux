@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
 import logger from "redux-logger";
 import logo from "./logo.svg";
 import "./App.css";
@@ -14,14 +13,7 @@ import MovieDetail from "./MovieDetail";
 import rootReducer from "./reducers/rootReducer";
 import Toggle from "./Toggle";
 
-const middlewares = [logger, thunk];
-
-// redux setup
-const store = createStore(
-  rootReducer,
-  {},
-  composeWithDevTools(applyMiddleware(...middlewares))
-);
+import store from "./store/store";
 
 const App = () => (
   <Provider store={store}>
